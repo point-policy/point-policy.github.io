@@ -541,8 +541,14 @@ pre {
 
         <hr>
         <h2>In-domain Performance</h2>
+        We evaluate Point Policy on <strong><span style="color: green;">8 real world tasks</span></strong> on a 
+        Franka Research 3 robot. Here, we present the results of evaluations conducted in an in-domain setting 
+        with significant spatial variations. Point Policy achieves an <strong><span style="color: green;">average 
+        success rate of 88%</span></strong> across all tasks, <strong><span style="color: green;">outperforming the 
+        strongest baseline by 75%</span></strong>. We provide videos of successful rollouts below (all played at 2X speed).
+        <br><br>
         
-        Video of task <select id="taskSelect1">
+        Task: <select id="taskSelect1">
             <option value="close drawer">close drawer</option>
             <option value="put bread on plate">put bread on plate</option>
             <option value="fold towel">fold towel</option>
@@ -551,7 +557,7 @@ pre {
             <option value="put bottle on rack">put bottle on rack</option>
             <option value="put bowl in oven">put bowl in oven</option>
             <option value="make bottle upright">make bottle upright</option>
-        </select> trajectory <select id="trajectorySelect1">
+        </select>    Trajectory: <select id="trajectorySelect1">
             <option value="trajectory 1">trajectory 1</option>
             <option value="trajectory 2">trajectory 2</option>
             <option value="trajectory 3">trajectory 3</option>
@@ -589,8 +595,13 @@ pre {
 
         <hr>
         <h2>Performance on Novel Object Instances</h2>
+        We evaluate Point Policy on novel object instances unseen in the training data on 6 tasks. We observe
+        that point policy achieves an <strong><span style="color: green;">average success rate of 74%</span></strong> 
+        across all tasks, <strong><span style="color: green;">outperforming the strongest baseline by 73%</span></strong>.
+        We provide videos of successful rollouts below (all played at 2X speed).
+        <br><br>
 
-        <label for="video-select2">Task_Object:</label>
+        <label for="video-select2">Task:</label>
         <select id="video-select2" onchange="displayVideo2()">
             <option value="./mfiles/videos_new_objects/put_bread_on_plate_newobject1.mp4">put bread on plate (object 1)</option>
             <option value="./mfiles/videos_new_objects/put_bread_on_plate_newobject2.mp4">put bread on plate (object 2)</option>
@@ -624,13 +635,17 @@ pre {
         <br><br>
 
         <hr>
-        <h2>Performance with Background Clutter</h2>
+        <h2>Performance with Background Distractors</h2>
+        We evaluate Point Policy in the presence of background clutter on 3 tasks on both in-domain and novel object instances. 
+        We observe that Point Policy is robust to background clutter, exhibiting either <strong><span style="color: green;">comparable performance or only minimal 
+        degradation in the presence of background distractors</span></strong>. We provide videos of successful rollouts below (all played at 2X speed).
+        <br><br>
 
-        Video of task <select id="taskSelect3">
+        Task: <select id="taskSelect3">
             <option value="put_bread_on_plate">put bread on plate</option>
             <option value="sweep_broom">sweep broom</option>
             <option value="put_bottle_on_rack">put bottle on rack</option>
-        </select> trajectory <select id="trajectorySelect3">
+        </select> Trajectory: <select id="trajectorySelect3">
             <option value="distractors1">trajectory 1</option>
             <option value="distractors2">trajectory 2</option>
         </select>
@@ -666,7 +681,13 @@ pre {
 
         <hr>
         <h2>Extreme Examples</h2>
-        Add teaser and other disco light videos; both in-domain and novel object with heavy scene variations
+        Here we include rollouts of Point Policy operating under heavy scene variations on both in-domain and 
+        novel object instances. We observe that despite the significant visual variations in the scene, Point Policy
+        succeeds at completing the tasks. This robustness can be attributed to Point Policy’s use of point-based 
+        representations, which are decoupled from raw pixel values. By focusing on semantically meaningful 
+        points rather than image-level features, Point Policy enables policies that are resilient to environmental perturbations. 
+        <!-- Add teaser and other disco light videos; both in-domain and novel object with heavy scene variations -->
+        <br><br>
 
         <label for="video-select4">Videos:</label>
         <select id="video-select4" onchange="displayVideo4()">
@@ -699,6 +720,7 @@ pre {
 
         <hr>
         <h2>Failure Examples</h2>
+        Below we provides examples of failures of Point Policy on in-domain as well as novel object instances.
 
         <h3>In-domain Objects</h3>
         <label for="video-select5">Videos:</label>
@@ -752,7 +774,7 @@ pre {
                 var selectElement6 = document.getElementById("video-select6");
                 var selectedVideo6 = selectElement6.options[selectElement6.selectedIndex].value;
                 var videoElement6 = document.getElementById("selected-video6");
-                videoElement6.src = selectedVideo5;
+                videoElement6.src = selectedVideo6;
             }
 
             // Display the first video when the page loads
@@ -760,177 +782,8 @@ pre {
         </script>
 
         <br><br>
-
-        
-<!-- 
         <hr>
-        <h2>Simulated environments</h2>
-        <p>
-            BAKU is evaluated on 3 simulated benchmarks - LIBERO, Meta-World, and DM Control Suite.
-        </p>
-        <br><br>
-        <center>
-            <div class="mx-auto">
-                <img class="card-img-top" src="./mfiles/images/simulation.jpeg" style="width:900">
-            </div>
-        </center>
-        <br><br>
 
-        <hr>
-        <h2>Multi-task Performance</h2>
-        <p>
-            BAKU is evaluated on 129 tasks across 3 simulated benchmarks - LIBERO, Meta-World, and DM Control Suite. 
-            BAKU achieves an overall 18% absolute improvement over RT-1 and MT-ACT, with a 36% absolute improvement 
-            on the harder LIBERO benchmark. On our real-world xArm multi-task kitchen environment on 30 tasks, 
-            BAKU achieves a 91% success rate, outperforming the strongest baseline by 35%.
-        </p>
-        <br><br>
-        <center>
-            <div class="mx-auto">
-                <img class="card-img-top" src="./mfiles/images/mt_results.png" style="width:800">
-            </div>
-        </center>
-        <br><br> -->
-
-        <!-- <hr>
-        <h2>Real World Rollouts</h2>
-        Utilizing BAKU, we execute a <strong><span style="color: green;">total of 30 tasks</span></strong> on our xArm multi-task kitchen environment. BAKU with
-        an average of just 17 demonstrations per task achieves a <strong><span style="color: green;">91% success rate</span></strong> with a VQ-BeT, a <strong><span style="color: green;">35% improvement</span></strong> over the strongest baseline. All videos are played at 1X speed.
-        <br>
-        <h3> Successful Rollouts</h3>
-        <label for="video-select1">Task:</label>
-        <select id="video-select1" onchange="displayVideo1()">
-            <option value="mfiles/videos/close_oven_door.mp4">close oven door</option>
-            <option value="mfiles/videos/open_oven_door.mp4">open oven door</option>
-            <option value="mfiles/videos/fetch_glass_from_rack.mp4">fetch glass from rack</option>
-            <option value="mfiles/videos/fetch_tea_from_rack.mp4">fetch tea from rack</option>
-            <option value="mfiles/videos/fetch_towel_from_rack.mp4">fetch towel from rack</option>
-            <option value="mfiles/videos/fetch_vitamin_bottle_from_rack.mp4">fetch vitamin bottle from rack</option>
-            <option value="mfiles/videos/fridge_fetch_knife_from_organizer.mp4">fetch knife from organizer</option>
-            <option value="mfiles/videos/fridge_put_ketchup_bottle_inside.mp4">put ketchup inside the fridge</option>
-            <option value="mfiles/videos/fridge_put_tea_in_door.mp4">put tea in the door of the fridge</option>
-            <option value="mfiles/videos/fridge_put_tomato_can_inside.mp4">put tomato can inside the fridge</option>
-            <option value="mfiles/videos/fridge_put_yoghurt_in_door.mp4">put yoghurt in the door of the fridge</option>
-            <option value="mfiles/videos/fridge_take_tea_out_from_door.mp4">fetch tea from the door of the fridge</option>
-            <option value="mfiles/videos/fridge_take_yoghurt_out_from_door.mp4">fetch yoghurt from the door of the fridge</option>
-            <option value="mfiles/videos/fridge_take_tomato_can_out.mp4">fetch tomato can from inside the fridge</option>
-            <option value="mfiles/videos/fridge_take_vitamin_water_out.mp4">fetch water bottle from inside the fridge</option>
-            <option value="mfiles/videos/lift_pan_lid.mp4">lift pan lid</option>
-            <option value="mfiles/videos/pick_blue_plate.mp4">pick blue plate</option>
-            <option value="mfiles/videos/pick_white_plate.mp4">pick white plate</option>
-            <option value="mfiles/videos/pick_black_plate.mp4">pick black plate</option>
-            <option value="mfiles/videos/pick_blue_mug.mp4">pick blue mug</option>
-            <option value="mfiles/videos/pick_light_blue_bowl.mp4">pick light blue bowl</option>
-            <option value="mfiles/videos/pick_orange_from_bowl.mp4">pick orange from bowl</option>
-            <option value="mfiles/videos/pick_coffee_bag.mp4">pick coffee bag</option>
-            <option value="mfiles/videos/pick_starch_box.mp4">pick starch box</option>
-            <option value="mfiles/videos/place_glass_on_rack.mp4">place glass on rack</option>
-            <option value="mfiles/videos/put_coke_can_in_basket.mp4">put coke can in basket</option>
-            <option value="mfiles/videos/put_cream_cheese_in_basket.mp4">put cream cheese in basket</option>
-            <option value="mfiles/videos/put_orange_into_bowl.mp4">put orange into bowl</option>
-            <option value="mfiles/videos/put_pear_into_bowl.mp4">put pear into bowl</option>
-            <option value="mfiles/videos/wipe_towel.mp4">wipe towel</option>
-        </select>
-
-        <div id="video-container">
-            <video id="selected-video1" controls>
-                Your browser does not support the video tag.
-            </video>
-        </div>
-
-        <script>
-            function displayVideo1() {
-                var selectElement = document.getElementById("video-select1");
-                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
-                var videoElement = document.getElementById("selected-video1");
-                videoElement.src = selectedVideo;
-            }
-
-            // Display the first video when the page loads
-            displayVideo1();
-        </script>
-        <br><br>
-
-        <br>
-        <h3>Failed Rollouts</h3>
-        <label for="video-select2">Task:</label>
-        <select id="video-select2" onchange="displayVideo2()">
-            <option value="mfiles/failed_videos/close_oven_door_fail.mp4">close oven door</option>
-            <option value="mfiles/failed_videos/open_oven_door_fail.mp4">open oven door</option>
-            <option value="mfiles/failed_videos/fridge_put_tomato_can_inside_fail.mp4">put tea in the door of the fridge</option>
-            <option value="mfiles/failed_videos/fridge_put_tomato_can_inside_fail.mp4">put tomato can inside the fridge</option>
-            <option value="mfiles/failed_videos/lift_pan_lid_fail.mp4">lift pan lid</option>
-            <option value="mfiles/failed_videos/pick_orange_from_bowl_fail.mp4">pick orange from bowl</option>
-            <option value="mfiles/failed_videos/put_coke_can_in_basket_fail.mp4">put coke can in basket</option>
-        </select>
-
-        <div id="video-container">
-            <video id="selected-video2" controls>
-                Your browser does not support the video tag.
-            </video>
-        </div>
-
-        <script>
-            function displayVideo2() {
-                var selectElement = document.getElementById("video-select2");
-                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
-                var videoElement = document.getElementById("selected-video2");
-                videoElement.src = selectedVideo;
-            }
-
-            // Display the first video when the page loads
-            displayVideo2();
-        </script>
-        <br><br>
-
-        <hr>
-        <h2>BAKU on Long Horizon Tasks</h2>
-        We evaluate BAKU on <strong><span style="color: green;">5 long-horizon tasks</span></strong> in our xArm multi-task kitchen environment. BAKU with
-        an average of just 19 demonstrations per task achieves an <strong><span style="color: green;">84% success rate</span></strong>, a <strong><span style="color: green;">20% improvement</span></strong> over our strongest baseline, MT-ACT. 
-        All videos are played at 1X speed.
-
-        <h3>Long-horizon Rollouts</h3>
-        <label for="video-select3">Task:</label>
-        <select id="video-select3" onchange="displayVideo2()">
-            <option value="mfiles/long_horizon_videos/set_up_table.mp4">set up the table</option>
-            <option value="mfiles/long_horizon_videos/pick_broom_and_sweep.mp4">pick broom and sweep</option>
-            <option value="mfiles/long_horizon_videos/pick_towel_and_wipe.mp4">pick towel and wipe</option>
-            <option value="mfiles/long_horizon_videos/take_bowl_out_of_oven.mp4">take the bowl out of the oven</option>
-            <option value="mfiles/long_horizon_videos/fridge_yoghurt_in_water_out.mp4">put yoghurt inside and take water bottle out of the fridge</option>
-        </select>
-
-        <div id="video-container">
-            <video id="selected-video3" controls>
-                Your browser does not support the video tag.
-            </video>
-        </div>
-
-        <script>
-            function displayVideo3() {
-                var selectElement = document.getElementById("video-select3");
-                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
-                var videoElement = document.getElementById("selected-video3");
-                videoElement.src = selectedVideo;
-            }
-
-            // Display the first video when the page loads
-            displayVideo3();
-        </script>
-        <br><br>
-
-        <hr>
-        <h2>What matter for multi-task policy learning?</h2>
-        We perform an extensive ablation study to understand the importance of different components 
-        for multi-task policy learning.
-
-        <br><br>
-        <center>
-            <div class="mx-auto">
-                <img class="card-img-top" src="./mfiles/images/ablation.png" style="width:600">
-            </div>
-        </center>
-        <br><br>
-        <hr> -->
 
     </section>
 
