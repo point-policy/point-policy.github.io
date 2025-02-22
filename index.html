@@ -549,14 +549,22 @@ pre {
         <br><br>
         
         Task: <select id="taskSelect1">
+            <option value="put bottle on rack">put bottle on rack</option>
+            <option value="make bottle upright">make bottle upright</option>
+            <option value="put bowl in oven">put bowl in oven</option>
+            <option value="sweep broom">sweep broom</option>
+            <option value="close oven">close oven</option>
+            <option value="fold towel">fold towel</option>
+            <option value="put bread on plate">put bread on plate</option>
             <option value="close drawer">close drawer</option>
+            <!-- <option value="close drawer">close drawer</option>
             <option value="put bread on plate">put bread on plate</option>
             <option value="fold towel">fold towel</option>
             <option value="close oven">close oven</option>
             <option value="sweep broom">sweep broom</option>
             <option value="put bottle on rack">put bottle on rack</option>
             <option value="put bowl in oven">put bowl in oven</option>
-            <option value="make bottle upright">make bottle upright</option>
+            <option value="make bottle upright">make bottle upright</option> -->
         </select>    Trajectory: <select id="trajectorySelect1">
             <option value="trajectory 1">trajectory 1</option>
             <option value="trajectory 2">trajectory 2</option>
@@ -603,7 +611,17 @@ pre {
 
         <label for="video-select2">Task:</label>
         <select id="video-select2" onchange="displayVideo2()">
+            <option value="./mfiles/videos_new_objects/put_bottle_on_rack_newobject1.mp4">put bottle on rack (object 1)</option>
+            <option value="./mfiles/videos_new_objects/put_bottle_on_rack_newobject2.mp4">put bottle on rack (object 2)</option>
+            <option value="./mfiles/videos_new_objects/put_bottle_on_rack_newobject3.mp4">put bottle on rack (object 3)</option>
+            <option value="./mfiles/videos_new_objects/make_bottle_upright_newobject1.mp4">make bottle upright (object 1)</option>
+            <option value="./mfiles/videos_new_objects/put_bowl_in_oven_newobject1.mp4">put bowl in oven (object 1)</option>
+            <option value="./mfiles/videos_new_objects/sweep_broom_newobject1.mp4">sweep broom (object 1)</option>
+            <option value="./mfiles/videos_new_objects/fold_towel_newobject1.mp4">fold towel (object 1)</option>
+            <option value="./mfiles/videos_new_objects/fold_towel_newobject2.mp4">fold towel (object 2)</option>
             <option value="./mfiles/videos_new_objects/put_bread_on_plate_newobject1.mp4">put bread on plate (object 1)</option>
+            <option value="./mfiles/videos_new_objects/put_bread_on_plate_newobject2.mp4">put bread on plate (object 2)</option>
+            <!-- <option value="./mfiles/videos_new_objects/put_bread_on_plate_newobject1.mp4">put bread on plate (object 1)</option>
             <option value="./mfiles/videos_new_objects/put_bread_on_plate_newobject2.mp4">put bread on plate (object 2)</option>
             <option value="./mfiles/videos_new_objects/fold_towel_newobject1.mp4">fold towel (object 1)</option>
             <option value="./mfiles/videos_new_objects/fold_towel_newobject2.mp4">fold towel (object 2)</option>
@@ -612,7 +630,7 @@ pre {
             <option value="./mfiles/videos_new_objects/put_bottle_on_rack_newobject2.mp4">put bottle on rack (object 2)</option>
             <option value="./mfiles/videos_new_objects/put_bottle_on_rack_newobject3.mp4">put bottle on rack (object 3)</option>
             <option value="./mfiles/videos_new_objects/put_bowl_in_oven_newobject1.mp4">put bowl in oven (object 1)</option>
-            <option value="./mfiles/videos_new_objects/make_bottle_upright_newobject1.mp4">make bottle upright (object 1)</option>
+            <option value="./mfiles/videos_new_objects/make_bottle_upright_newobject1.mp4">make bottle upright (object 1)</option> -->
         </select>
 
         <div id="video-container2">
@@ -642,9 +660,12 @@ pre {
         <br><br>
 
         Task: <select id="taskSelect3">
-            <option value="put_bread_on_plate">put bread on plate</option>
-            <option value="sweep_broom">sweep broom</option>
             <option value="put_bottle_on_rack">put bottle on rack</option>
+            <option value="sweep_broom">sweep broom</option>
+            <option value="put_bread_on_plate">put bread on plate</option>
+            <!-- <option value="put_bread_on_plate">put bread on plate</option>
+            <option value="sweep_broom">sweep broom</option>
+            <option value="put_bottle_on_rack">put bottle on rack</option> -->
         </select> Trajectory: <select id="trajectorySelect3">
             <option value="distractors1">trajectory 1</option>
             <option value="distractors2">trajectory 2</option>
@@ -725,13 +746,21 @@ pre {
         <h3>In-domain Objects</h3>
         <label for="video-select5">Videos:</label>
         <select id="video-select5" onchange="displayVideo5()">
+            <option value="./mfiles/videos_failure/failure_put_bottle_on_rack_1.mp4">put bottle on rack</option>
+            <option value="./mfiles/videos_failure/failure_make_bottle_upright_1.mp4">make bottle upright</option>
+            <option value="./mfiles/videos_failure/failure_put_bowl_in_oven_1.mp4">put bowl in oven</option>
+            <option value="./mfiles/videos_failure/failure_sweep_broom_1.mp4">sweep broom</option>
+            <option value="./mfiles/videos_failure/failure_close_oven.mp4">close oven</option>
+            <option value="./mfiles/videos_failure/failure_fold_towel_1.mp4">fold towel</option>
             <option value="./mfiles/videos_failure/failure_put_bread_on_plate_1.mp4">put bread on plate</option>
+
+            <!-- <option value="./mfiles/videos_failure/failure_put_bread_on_plate_1.mp4">put bread on plate</option>
             <option value="./mfiles/videos_failure/failure_fold_towel_1.mp4">fold towel</option>
             <option value="./mfiles/videos_failure/failure_close_oven.mp4">close oven</option>
             <option value="./mfiles/videos_failure/failure_sweep_broom_1.mp4">sweep broom</option>
             <option value="./mfiles/videos_failure/failure_put_bottle_on_rack_1.mp4">put bottle on rack</option>
             <option value="./mfiles/videos_failure/failure_put_bowl_in_oven_1.mp4">put bowl in oven</option>
-            <option value="./mfiles/videos_failure/failure_make_bottle_upright_1.mp4">make bottle upright</option>
+            <option value="./mfiles/videos_failure/failure_make_bottle_upright_1.mp4">make bottle upright</option> -->
         </select>
 
         <div id="video-container5">
@@ -755,12 +784,19 @@ pre {
         <h3>Novel Object Instances</h3>
         <label for="video-select6">Videos:</label>
         <select id="video-select6" onchange="displayVideo6()">
+            <option value="./mfiles/videos_failure/failure_put_bottle_on_rack_2.mp4">put bottle on rack</option>
+            <option value="./mfiles/videos_failure/failure_make_bottle_upright_2.mp4">make bottle upright</option>
+            <option value="./mfiles/videos_failure/failure_put_bowl_in_oven_2.mp4">put bowl in oven</option>
+            <option value="./mfiles/videos_failure/failure_sweep_broom_2.mp4">sweep broom</option>
+            <option value="./mfiles/videos_failure/failure_fold_towel_2.mp4">fold towel</option>            
             <option value="./mfiles/videos_failure/failure_put_bread_on_plate_2.mp4">put bread on plate</option>
+            
+            <!-- <option value="./mfiles/videos_failure/failure_put_bread_on_plate_2.mp4">put bread on plate</option>
             <option value="./mfiles/videos_failure/failure_fold_towel_2.mp4">fold towel</option>
             <option value="./mfiles/videos_failure/failure_sweep_broom_2.mp4">sweep broom</option>
             <option value="./mfiles/videos_failure/failure_put_bottle_on_rack_2.mp4">put bottle on rack</option>
             <option value="./mfiles/videos_failure/failure_put_bowl_in_oven_2.mp4">put bowl in oven</option>
-            <option value="./mfiles/videos_failure/failure_make_bottle_upright_2.mp4">make bottle upright</option>
+            <option value="./mfiles/videos_failure/failure_make_bottle_upright_2.mp4">make bottle upright</option> -->
         </select>
 
         <div id="video-container6">
