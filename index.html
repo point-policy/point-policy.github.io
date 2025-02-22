@@ -420,7 +420,7 @@ pre {
         <!-- <br> -->
         <!-- <center>
         <div class="affil-row">
-            <div class="venue text-center"><b>NeurIPS 2024</b></div>
+            <div class="venue text-center"><b></b></div>
         </div>
         </center> -->
         <br>
@@ -484,7 +484,7 @@ pre {
                 critical need for alternative data sources for robotics and frameworks that 
                 enable learning from such data. In this work, we present Point Policy, a new 
                 method for learning robot policies exclusively from offline human demonstration 
-                videos and without any teleoperation data. \method{} leverages state-of-the-art 
+                videos and without any teleoperation data. Point Policy leverages state-of-the-art 
                 vision models and policy architectures to translate human hand poses into robot 
                 poses while capturing object states through semantically meaningful key points. 
                 This approach yields a morphology-agnostic representation that facilitates 
@@ -543,13 +543,18 @@ pre {
         <h2>In-domain Performance</h2>
         
         Video of task <select id="taskSelect1">
-            <option value="task1">Task 1</option>
-            <option value="task2">Task 2</option>
-            <option value="task3">Task 3</option>
+            <option value="close drawer">close drawer</option>
+            <option value="put bread on plate">put bread on plate</option>
+            <option value="fold towel">fold towel</option>
+            <option value="close oven">close oven</option>
+            <option value="sweep broom">sweep broom</option>
+            <option value="put bottle on rack">put bottle on rack</option>
+            <option value="put bowl in oven">put bowl in oven</option>
+            <option value="make bottle upright">make bottle upright</option>
         </select> trajectory <select id="trajectorySelect1">
-            <option value="traj1">Trajectory 1</option>
-            <option value="traj2">Trajectory 2</option>
-            <option value="traj3">Trajectory 3</option>
+            <option value="trajectory 1">trajectory 1</option>
+            <option value="trajectory 2">trajectory 2</option>
+            <option value="trajectory 3">trajectory 3</option>
         </select>
     
         <div class="video-container">
@@ -568,7 +573,7 @@ pre {
             function updateVideo1() {
                 const task = taskSelect1.value;
                 const trajectory = trajectorySelect1.value;
-                const videoUrl = `videos/${task}_${trajectory}.mp4`;
+                const videoUrl = `./mfiles/videos_in_domain/${task}_${trajectory}.mp4`;
                 videoSource1.src = videoUrl;
                 videoPlayer1.load();
             }
