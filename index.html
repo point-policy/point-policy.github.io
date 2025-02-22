@@ -589,63 +589,55 @@ pre {
 
         <hr>
         <h2>Performance on Novel Object Instances</h2>
-        
-        Video of task <select id="taskSelect2">
-            <option value="task1">Task 1</option>
-            <option value="task2">Task 2</option>
-            <option value="task3">Task 3</option>
-        </select> trajectory <select id="trajectorySelect2">
-            <option value="traj1">Trajectory 1</option>
-            <option value="traj2">Trajectory 2</option>
-            <option value="traj3">Trajectory 3</option>
+
+        <label for="video-select2">Task_Object:</label>
+        <select id="video-select2" onchange="displayVideo2()">
+            <option value="./mfiles/videos_new_objects/put_bread_on_plate_newobject1.mp4">put bread on plate (object 1)</option>
+            <option value="./mfiles/videos_new_objects/put_bread_on_plate_newobject2.mp4">put bread on plate (object 2)</option>
+            <option value="./mfiles/videos_new_objects/fold_towel_newobject1.mp4">fold towel (object 1)</option>
+            <option value="./mfiles/videos_new_objects/fold_towel_newobject2.mp4">fold towel (object 2)</option>
+            <option value="./mfiles/videos_new_objects/sweep_broom_newobject1.mp4">sweep broom (object 1)</option>
+            <option value="./mfiles/videos_new_objects/put_bottle_on_rack_newobject1.mp4">put bottle on rack (object 1)</option>
+            <option value="./mfiles/videos_new_objects/put_bottle_on_rack_newobject2.mp4">put bottle on rack (object 2)</option>
+            <option value="./mfiles/videos_new_objects/put_bottle_on_rack_newobject3.mp4">put bottle on rack (object 3)</option>
+            <option value="./mfiles/videos_new_objects/put_bowl_in_oven_newobject1.mp4">put bowl in oven (object 1)</option>
+            <option value="./mfiles/videos_new_objects/make_bottle_upright_newobject1.mp4">make bottle upright (object 1)</option>
         </select>
-    
-        <div class="video-container">
-            <video id="videoPlayer" width="640" height="360" controls>
-                <source id="videoSource" src="" type="video/mp4">
+
+        <div id="video-container2">
+            <video id="selected-video2" controls>
                 Your browser does not support the video tag.
             </video>
         </div>
-    
-        <script>
-            const taskSelect2 = document.getElementById('taskSelect2');
-            const trajectorySelect2 = document.getElementById('trajectorySelect2');
-            const videoSource2 = document.getElementById('videoSource2');
-            const videoPlayer2 = document.getElementById('videoPlayer2');
-    
-            function updateVideo2() {
-                const task = taskSelect2.value;
-                const trajectory = trajectorySelect2.value;
-                const videoUrl = `videos/${task}_${trajectory}.mp4`;
-                videoSource2.src = videoUrl;
-                videoPlayer2.load();
-            }
-    
-            taskSelect2.addEventListener('change', updateVideo2);
-            trajectorySelect2.addEventListener('change', updateVideo2);
-    
-            // Initial video load
-            updateVideo2();
-        </script>
 
+        <script>
+            function displayVideo2() {
+                var selectElement = document.getElementById("video-select2");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video2");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo2();
+        </script>
         <br><br>
 
         <hr>
         <h2>Performance with Background Clutter</h2>
 
         Video of task <select id="taskSelect3">
-            <option value="task1">Task 1</option>
-            <option value="task2">Task 2</option>
-            <option value="task3">Task 3</option>
+            <option value="put_bread_on_plate">put bread on plate</option>
+            <option value="sweep_broom">sweep broom</option>
+            <option value="put_bottle_on_rack">put bottle on rack</option>
         </select> trajectory <select id="trajectorySelect3">
-            <option value="traj1">Trajectory 1</option>
-            <option value="traj2">Trajectory 2</option>
-            <option value="traj3">Trajectory 3</option>
+            <option value="distractors1">trajectory 1</option>
+            <option value="distractors2">trajectory 2</option>
         </select>
     
-        <div class="video-container">
-            <video id="videoPlayer" width="640" height="360" controls>
-                <source id="videoSource" src="" type="video/mp4">
+        <div class="video-container3">
+            <video id="videoPlayer3" width="640" height="360" controls>
+                <source id="videoSource3" src="" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -657,10 +649,10 @@ pre {
             const videoPlayer3 = document.getElementById('videoPlayer3');
     
             function updateVideo3() {
-                const task = taskSelect3.value;
-                const trajectory = trajectorySelect3.value;
-                const videoUrl = `videos/${task}_${trajectory}.mp4`;
-                videoSource3.src = videoUrl;
+                const task3 = taskSelect3.value;
+                const trajectory3 = trajectorySelect3.value;
+                const videoUrl3 = `./mfiles/videos_background_distractor/${task3}_${trajectory3}.mp4`;
+                videoSource3.src = videoUrl3;
                 videoPlayer3.load();
             }
     
@@ -670,13 +662,44 @@ pre {
             // Initial video load
             updateVideo3();
         </script>
-
-
         <br><br>
 
         <hr>
         <h2>Extreme Examples</h2>
-        Add teaser and other disco light videos
+        Add teaser and other disco light videos; both in-domain and novel object with heavy scene variations
+
+        <label for="video-select4">Videos:</label>
+        <select id="video-select4" onchange="displayVideo4()">
+            <option value="./mfiles/videos_extreme/sweep_broom_extreme1.mp4">sweep broom</option>
+            <option value="./mfiles/videos_extreme/long_horizon_extreme.mp4">long horizon</option>
+            <option value="./mfiles/videos_extreme/put_bottle_on_rack_extreme2.mp4">put bottle on rack (in-domain)</option>
+            <option value="./mfiles/videos_extreme/put_bottle_on_rack_extreme1.mp4">put bottle on rack (novel object)</option>
+            <option value="./mfiles/videos_extreme/put_bread_on_plate_extreme1.mp4">put bread on plate (in-domain)</option>
+            <option value="./mfiles/videos_extreme/put_bread_on_plate_extreme2.mp4">put bread on plate (novel object)</option>
+        </select>
+
+        <div id="video-container4">
+            <video id="selected-video4" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo4() {
+                var selectElement4 = document.getElementById("video-select4");
+                var selectedVideo4 = selectElement4.options[selectElement4.selectedIndex].value;
+                var videoElement4 = document.getElementById("selected-video4");
+                videoElement4.src = selectedVideo4;
+            }
+
+            // Display the first video when the page loads
+            displayVideo4();
+        </script>
+        <br><br>
+
+        <hr>
+        <h2>Failure Examples</h2>
+
         <br><br>
 
         
